@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>My PWA</title>
+  <!-- This link tells the browser about our PWA -->
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <h1>My PWA</h1>
+  <input type="text" id="name">
+  <button onclick="saveName()">Save Name</button>
+  <p id="output"></p>
+
+  <script>
+    <!-- This function asks the user for their name -->
+    function saveName() {
+      // Get the user's name from the input field
+      const name = document.getElementById("name").value;
+
+      // Save the user's name in the browser's local storage
+      const storage = window.localStorage;
+      storage.setItem("name", name);
+
+      // Display the user's name in the output text field
+      document.getElementById("output").innerHTML = name;
+    }
+  </script>
+</body>
+</html>
